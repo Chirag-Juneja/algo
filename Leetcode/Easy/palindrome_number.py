@@ -14,16 +14,6 @@ Explanation: From left to right, it reads -121. From right to left, it becomes 1
 
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        forward = []
-        reverse = []
-        if x < 0:
+        if x<0:
             return False
-        while x:
-            forward.append(x % 10)
-            reverse.append(x % 10)
-            x = x // 10
-        reverse.reverse()
-        if forward == reverse:
-            return True
-        else:
-            return False
+        return str(x)==str(x)[::-1]
