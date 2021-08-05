@@ -13,8 +13,10 @@ Output: Because nums[0] + nums[1] == 9, we return [0, 1].
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        nlen = len(nums)
-        for x in range(0, nlen):
-            for y in range(x + 1, nlen):
-                if nums[x] + nums[y] == target:
-                    return [x, y]
+        hashmap=dict()
+        for index,num in enumerate(nums):
+            diff = target - num 
+            if num in hashmap:
+                return [hashmap[num], index]
+            else:
+                hashmap[diff] = index
