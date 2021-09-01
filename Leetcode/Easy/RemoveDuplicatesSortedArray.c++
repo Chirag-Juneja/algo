@@ -16,20 +16,22 @@ class Solution
 public:
     int removeDuplicates(vector<int> &nums)
     {
-        if (nums.begin()== nums.end()){
+        if (nums.begin() == nums.end())
+        {
             return 0;
         }
-        auto ip = unique(nums.begin(),nums.end());
-        return distance(nums.begin(),ip);
+        auto ip = unique(nums.begin(), nums.end());
+        return distance(nums.begin(), ip);
     }
 };
 
 int main()
 {
-    vector<int> nums = {1,2,3,4,4,5,5,6};
+    vector<int> nums = {1, 2, 3, 4, 4, 5, 5, 6};
     Solution sol = Solution();
     int k = sol.removeDuplicates(nums);
-    for (auto i=0; i<k; i++){
+    for (auto i = 0; i < k; i++)
+    {
         cout << nums[i] << endl;
     }
     return 0;
