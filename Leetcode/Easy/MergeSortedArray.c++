@@ -10,30 +10,38 @@ A subarray is a contiguous part of an array.
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
-        int k = m+n-1;
+    void merge(vector<int> &nums1, int m, vector<int> &nums2, int n)
+    {
+        int k = m + n - 1;
         m--;
         n--;
-        while(n>=0){
-            if (m>=0 && nums1[m]>nums2[n]){
-                nums1[k--]=nums1[m--];
-            }else{
-                nums1[k--]=nums2[n--];
+        while (n >= 0)
+        {
+            if (m >= 0 && nums1[m] > nums2[n])
+            {
+                nums1[k--] = nums1[m--];
+            }
+            else
+            {
+                nums1[k--] = nums2[n--];
             }
         }
     }
 };
 
-int main(){
-    vector<int>nums1 = {0};
-    int m =0;
-    int n =1;
-    vector<int>nums2 = {1};
+int main()
+{
+    vector<int> nums1 = {0};
+    int m = 0;
+    int n = 1;
+    vector<int> nums2 = {1};
     Solution sol = Solution();
-    sol.merge(nums1,m,nums2,n);
-    for(auto a:nums1){
+    sol.merge(nums1, m, nums2, n);
+    for (auto a : nums1)
+    {
         cout << a << endl;
     }
 }

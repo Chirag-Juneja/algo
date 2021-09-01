@@ -7,18 +7,22 @@ You must write an algorithm with O(log n) runtime complexity.
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int searchInsert(vector<int>& nums, int target) {
-        return lower_bound(nums.begin(),nums.end(),target)-nums.begin();
+    int searchInsert(vector<int> &nums, int target)
+    {
+        return lower_bound(nums.begin(), nums.end(), target) - nums.begin();
     }
 };
 
-int main(){
-    vector<int>nums = {1,4,5};
+int main()
+{
+    vector<int> nums = {1, 4, 5};
     Solution sol = Solution();
-    vector<int>test={0,1,2,3,4,5,6,7};
-    for(auto a:test){
-        cout << sol.searchInsert(nums,a) << endl;
+    vector<int> test = {0, 1, 2, 3, 4, 5, 6, 7};
+    for (auto a : test)
+    {
+        cout << sol.searchInsert(nums, a) << endl;
     }
 }
