@@ -19,22 +19,8 @@ public:
         if (nums.begin()== nums.end()){
             return 0;
         }
-
-        set<int> set;
-        
-        for (auto a : nums)
-        {
-            set.insert(a);
-        }
-
-        int size = set.size();
-        int counter = 0;
-        
-        for(auto itr=set.begin();itr!=set.end();itr++){
-            nums[counter]=*itr;
-            counter ++;
-        }
-        return size;    
+        auto ip = unique(nums.begin(),nums.end());
+        return distance(nums.begin(),ip);
     }
 };
 
