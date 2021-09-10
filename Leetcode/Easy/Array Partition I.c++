@@ -17,20 +17,23 @@ So the maximum possible sum is 4.
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int arrayPairSum(vector<int>& nums) {
-        sort(nums.begin(),nums.end());
-        int sum=0;
-        for(int i=0;i<nums.size();i+=2){
-            sum+=nums[i];
+    int arrayPairSum(vector<int> &nums)
+    {
+        sort(nums.begin(), nums.end());
+        int sum = 0;
+        for (int i = 0; i < nums.size(); i += 2)
+        {
+            sum += nums[i];
         }
         return sum;
     }
 };
 int main()
 {
-    vector<int> nums = {6,2,6,5,1,2};
+    vector<int> nums = {6, 2, 6, 5, 1, 2};
     Solution sol = Solution();
     cout << sol.arrayPairSum(nums) << endl;
 }

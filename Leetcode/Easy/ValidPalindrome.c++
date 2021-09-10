@@ -13,24 +13,32 @@ Explanation: "amanaplanacanalpanama" is a palindrome.
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    bool isPalindrome(string s) {
+    bool isPalindrome(string s)
+    {
         auto begin = s.begin();
-        auto end = s.end()-1;
-        while(begin<end){
-            if(!iswalnum(*begin)){
+        auto end = s.end() - 1;
+        while (begin < end)
+        {
+            if (!iswalnum(*begin))
+            {
                 begin++;
                 continue;
             }
-            if(!iswalnum(*end)){
+            if (!iswalnum(*end))
+            {
                 end--;
                 continue;
-            } 
-            if (tolower(*begin)==tolower(*end)){
+            }
+            if (tolower(*begin) == tolower(*end))
+            {
                 begin++;
                 end--;
-            }else{
+            }
+            else
+            {
                 return false;
             }
         }
@@ -38,9 +46,10 @@ public:
     }
 };
 
-int main(){
-    string s ="A man, a plan, a canal: Panama";
-    Solution sol= Solution();
+int main()
+{
+    string s = "A man, a plan, a canal: Panama";
+    Solution sol = Solution();
     cout << sol.isPalindrome(s) << endl;
     return 0;
 }

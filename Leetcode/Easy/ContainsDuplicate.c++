@@ -13,13 +13,17 @@ Output: true
 
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    bool containsDuplicate(vector<int>& nums) {
-        unordered_map<int,int> umap;
-        for (auto n:nums){
+    bool containsDuplicate(vector<int> &nums)
+    {
+        unordered_map<int, int> umap;
+        for (auto n : nums)
+        {
             umap[n]++;
-            if (umap[n]>1){
+            if (umap[n] > 1)
+            {
                 return true;
             }
         }
@@ -27,8 +31,9 @@ public:
     }
 };
 
-int main(){
-    vector<int> nums={1,2,3,1};
+int main()
+{
+    vector<int> nums = {1, 2, 3, 1};
     Solution sol = Solution();
     cout << sol.containsDuplicate(nums) << endl;
 }

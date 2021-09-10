@@ -14,20 +14,23 @@ Output: 1
 
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int singleNumber(vector<int>& nums) {
-        int x=0;
-        for(auto n:nums){
-            x^=n;
+    int singleNumber(vector<int> &nums)
+    {
+        int x = 0;
+        for (auto n : nums)
+        {
+            x ^= n;
         }
         return x;
     }
 };
 
-int main(){
-    vector<int> nums = {4,1,2,1,2};
+int main()
+{
+    vector<int> nums = {4, 1, 2, 1, 2};
     Solution sol = Solution();
     cout << sol.singleNumber(nums) << endl;
-
 }

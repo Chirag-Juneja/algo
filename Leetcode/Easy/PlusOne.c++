@@ -18,32 +18,41 @@ Thus, the result should be [1,2,4].
 
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    vector<int> plusOne(vector<int>& digits) {
+    vector<int> plusOne(vector<int> &digits)
+    {
         int carry = 1;
         int size = digits.size();
-        for(int i=size-1; i>=0; i--){
-            digits[i]+=carry;
-            if (digits[i]/10 > 0){
-                digits[i] = digits[i]%10;
-                carry=1;
-            }else{
-                carry=0;
+        for (int i = size - 1; i >= 0; i--)
+        {
+            digits[i] += carry;
+            if (digits[i] / 10 > 0)
+            {
+                digits[i] = digits[i] % 10;
+                carry = 1;
+            }
+            else
+            {
+                carry = 0;
             }
         }
-        if (carry >0){
-            digits.insert(digits.begin(),1);
+        if (carry > 0)
+        {
+            digits.insert(digits.begin(), 1);
         }
         return digits;
     }
 };
 
-int main(){
-    vector<int> digits = {3,8,9};
+int main()
+{
+    vector<int> digits = {3, 8, 9};
     Solution sol = Solution();
     digits = sol.plusOne(digits);
-    for(auto d:digits){
+    for (auto d : digits)
+    {
         cout << d << endl;
     }
     return 0;
