@@ -16,24 +16,27 @@ Output: 3
 
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    int majorityElement(vector<int>& nums) {
-       unordered_map<int,int> um;
-       for(auto n:nums){
-           um[n]++;
-           if(um[n]>(nums.size()/2)){
-               return n;
-           }
-       }
-       return 0;
+    int majorityElement(vector<int> &nums)
+    {
+        unordered_map<int, int> um;
+        for (auto n : nums)
+        {
+            um[n]++;
+            if (um[n] > (nums.size() / 2))
+            {
+                return n;
+            }
+        }
+        return 0;
     }
 };
 
-int main(){
-    vector<int> nums = {2,2,1,1,1,2,2};
+int main()
+{
+    vector<int> nums = {2, 2, 1, 1, 1, 2, 2};
     Solution sol = Solution();
     cout << sol.majorityElement(nums) << endl;
-
-
 }
