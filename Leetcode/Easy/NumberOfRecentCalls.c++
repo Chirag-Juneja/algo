@@ -35,26 +35,31 @@ At most 104 calls will be made to ping.
 #include <bits/stdc++.h>
 using namespace std;
 
-class RecentCounter {
+class RecentCounter
+{
 public:
     deque<int> dq;
-    RecentCounter() {
+    RecentCounter()
+    {
     }
-    
-    int ping(int t) {
+
+    int ping(int t)
+    {
         dq.push_back(t);
-        while(dq.front()<(t-3000)){
+        while (dq.front() < (t - 3000))
+        {
             dq.pop_front();
         }
         return dq.size();
     }
 };
 
-int main(){
+int main()
+{
     RecentCounter recentCounter = RecentCounter();
-    cout << recentCounter.ping(1) << endl;     // requests = [1], range is [-2999,1], return 1
-    cout << recentCounter.ping(100) << endl;   // requests = [1, 100], range is [-2900,100], return 2
-    cout << recentCounter.ping(3001) << endl;  // requests = [1, 100, 3001], range is [1,3001], return 3
-    cout << recentCounter.ping(3002) << endl;  // requests = [1, 100, 3001, 3002], range is [2,3002], return 3
+    cout << recentCounter.ping(1) << endl;    // requests = [1], range is [-2999,1], return 1
+    cout << recentCounter.ping(100) << endl;  // requests = [1, 100], range is [-2900,100], return 2
+    cout << recentCounter.ping(3001) << endl; // requests = [1, 100, 3001], range is [1,3001], return 3
+    cout << recentCounter.ping(3002) << endl; // requests = [1, 100, 3001, 3002], range is [2,3002], return 3
     return 0;
 }
