@@ -18,22 +18,27 @@ ans = [nums[nums[0]], nums[nums[1]], nums[nums[2]], nums[nums[3]], nums[nums[4]]
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    vector<int> buildArray(vector<int>& nums) {
+    vector<int> buildArray(vector<int> &nums)
+    {
         vector<int> ans;
-        for(auto n:nums){
+        for (auto n : nums)
+        {
             ans.push_back(nums[n]);
         }
         return ans;
     }
 };
 
-int main(){
-    vector<int> nums = {5,0,1,2,3,4};
+int main()
+{
+    vector<int> nums = {5, 0, 1, 2, 3, 4};
     Solution sol = Solution();
     nums = sol.buildArray(nums);
-    for(auto n:nums){
+    for (auto n : nums)
+    {
         cout << n << endl;
     }
     return 0;
