@@ -23,8 +23,10 @@ public:
     int largest(vector<int> &arr, int n)
     {
         int result = arr[0];
-        for(int i=0;i<n;i++){
-            if(arr[i]>result){
+        for (int i = 0; i < n; i++)
+        {
+            if (arr[i] > result)
+            {
                 result = arr[i];
             }
         }
@@ -32,9 +34,10 @@ public:
     }
 };
 
-int main(){
+int main()
+{
 
     vector<int> arr = {1, 2, 0, 3, 2, 4, 5};
     Solution sol = Solution();
-    cout << sol.largest(arr,arr.size()) << endl;
+    cout << sol.largest(arr, arr.size()) << endl;
 }
