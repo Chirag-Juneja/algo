@@ -18,28 +18,29 @@ as 2.
 
 using namespace std;
 
-struct Node {
-  int data;
-  struct Node *next;
-  Node(int x) {
-    data = x;
-    next = NULL;
-  }
+struct Node
+{
+    int data;
+    struct Node *next;
+    Node(int x)
+    {
+        data = x;
+        next = NULL;
+    }
 };
-
 
 class Solution
 {
-    public:
+public:
     void deleteNode(Node *del)
     {
         del->data = del->next->data;
         del->next = del->next->next;
     }
-
 };
 
-int main(){
+int main()
+{
 
     vector<int> v = {2, 4, 6, 7, 5, 1, 0};
     Node *head = new Node(v[0]);
@@ -52,9 +53,9 @@ int main(){
     Node *del = head->next->next;
     Solution sol = Solution();
     sol.deleteNode(del);
-    while(head!=NULL){
+    while (head != NULL)
+    {
         cout << head->data << endl;
         head = head->next;
     }
-
 }
