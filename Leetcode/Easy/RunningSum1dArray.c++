@@ -15,25 +15,28 @@ Explanation: Running sum is obtained as follows: [1, 1+2, 1+2+3, 1+2+3+4].
 
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    vector<int> runningSum(vector<int>& nums) {
+    vector<int> runningSum(vector<int> &nums)
+    {
         vector<int> rsum;
-        int sum=0;
-        for(int i=0;i<nums.size();i++){
-            sum+=nums[i]; 
+        int sum = 0;
+        for (int i = 0; i < nums.size(); i++)
+        {
+            sum += nums[i];
             rsum.push_back(sum);
         }
-        return rsum;        
+        return rsum;
     }
 };
 
-
-int main(){
-    vector<int> nums = {1,2,3,4};
+int main()
+{
+    vector<int> nums = {1, 2, 3, 4};
     nums = Solution().runningSum(nums);
-    for(auto x:nums){
+    for (auto x : nums)
+    {
         cout << x << " ";
     }
-
 }
