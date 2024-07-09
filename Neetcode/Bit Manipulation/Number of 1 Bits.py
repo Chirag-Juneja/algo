@@ -28,28 +28,32 @@ Constraints:
 
 The input must be a binary string of length 32
 """
+
+
 class Solution:
-    def hammingWeight(self,n:int)->int:
+    def hammingWeight(self, n: int) -> int:
         x = 0b00000000000000000000000000000001
         count = 0
         for b in range((n).bit_length()):
-            count+=x&n
-            n=n>>1
+            count += x & n
+            n = n >> 1
         return count
-    
-    def hammingWeight_alternate(self,n:int)->int:
-        count=0
+
+    def hammingWeight_alternate(self, n: int) -> int:
+        count = 0
         while n:
-            n=n&(n-1)
-            count+=1
+            n = n & (n - 1)
+            count += 1
         return count
-    
+
+
 def test_hammingWeight():
     n = 0b11111111111111111111111111111101
     result = Solution().hammingWeight(n)
-    assert result ==31
+    assert result == 31
     result = Solution().hammingWeight_alternate(n)
-    assert result ==31
+    assert result == 31
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     test_hammingWeight()

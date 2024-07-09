@@ -32,6 +32,7 @@ Constraints:
 2 <= s.length <= 100
 s consists only of lowercase English letters.
 """
+
 from typing import *
 
 
@@ -39,14 +40,16 @@ class Solution:
     def scoreOfString(self, s: str) -> int:
         score = 0
         s = [ord(x) for x in s]
-        for idx in range(len(s)-1):
-            score += abs(s[idx]-s[idx+1])
+        for idx in range(len(s) - 1):
+            score += abs(s[idx] - s[idx + 1])
         return score
+
 
 def test_scoreofString():
     s = "hello"
     result = Solution().scoreOfString(s)
     assert result == 13
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     test_scoreofString()

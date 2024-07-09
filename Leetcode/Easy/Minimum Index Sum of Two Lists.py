@@ -40,47 +40,48 @@ All the strings of list2 are unique.
 There is at least a common string between list1 and list2.
 """
 
-from typing import * 
+from typing import *
+
 
 class Solution:
-    def findRestaurant(self,list1:List[str],list2:List[str])->List[str]:
-        hm ={}
+    def findRestaurant(self, list1: List[str], list2: List[str]) -> List[str]:
+        hm = {}
         common = set(list1) & set(list2)
         for idx, s in enumerate(list1):
             if s in common:
                 if s not in hm:
-                    hm[s]=[]
+                    hm[s] = []
                 hm[s].append(idx)
         for idx, s in enumerate(list2):
             if s in hm:
                 hm[s].append(idx)
-        min_idx = len(list1)+len(list2)
-        result =[]
-        for key,value in hm.items():
-            if len(value)>1:
+        min_idx = len(list1) + len(list2)
+        result = []
+        for key, value in hm.items():
+            if len(value) > 1:
                 idx_sum = sum(value)
                 if min_idx == idx_sum:
                     result.append(key)
-                elif min_idx>idx_sum:
+                elif min_idx > idx_sum:
                     min_idx = sum(value)
                     result = [key]
         return result
 
 
-
 def test_findRestaurant_multiple():
-    list1 = ["happy","sad","good"]
-    list2 = ["sad","happy","good"]
-    result = Solution().findRestaurant(list1,list2)
-    assert result == ["happy","sad"]
+    list1 = ["happy", "sad", "good"]
+    list2 = ["sad", "happy", "good"]
+    result = Solution().findRestaurant(list1, list2)
+    assert result == ["happy", "sad"]
+
 
 def test_findRestaurant_single():
-    list1 = ["Shogun","Tapioca Express","Burger King","KFC"]
-    list2 = ["KFC","Shogun","Burger King"]
-    result = Solution().findRestaurant(list1,list2)
+    list1 = ["Shogun", "Tapioca Express", "Burger King", "KFC"]
+    list2 = ["KFC", "Shogun", "Burger King"]
+    result = Solution().findRestaurant(list1, list2)
     assert result == ["Shogun"]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     test_findRestaurant_single()
     test_findRestaurant_multiple()

@@ -14,19 +14,21 @@ Input: s = "(]"
 Output: false
 """
 
+
 class Solution(object):
     def isValid(self, s):
-        pairs ={'(':')','[':']','{':'}'}
+        pairs = {"(": ")", "[": "]", "{": "}"}
         stack = []
         for p in reversed(s):
             if p in pairs.values():
                 stack.append(p)
             else:
-                if stack and pairs[p]==stack[-1] :
+                if stack and pairs[p] == stack[-1]:
                     stack.pop()
                 else:
                     return False
         return not stack
+
 
 print(Solution().isValid("[(){}]"))
 print(Solution().isValid("[}]"))

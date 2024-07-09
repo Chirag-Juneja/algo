@@ -26,30 +26,33 @@ Constraints:
 Each element in the array appears twice except for one element which appears only once.
 """
 
-from typing import * 
+from typing import *
+
+
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        hs=set()
+        hs = set()
         for n in nums:
             if n in hs:
                 hs.remove(n)
             else:
                 hs.add(n)
         return next(iter(hs))
-    
 
     def singleNumber_BitManipulation(self, nums: List[int]) -> int:
         x = 0
         for n in nums:
-            x^=n
+            x ^= n
         return x
-     
+
+
 def test_singleNumber():
-    nums = [4,1,2,1,2]
-    result = Solution().singleNumber(nums)    
+    nums = [4, 1, 2, 1, 2]
+    result = Solution().singleNumber(nums)
     assert result == 4
-    result = Solution().singleNumber_BitManipulation(nums)    
+    result = Solution().singleNumber_BitManipulation(nums)
     assert result == 4
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     test_singleNumber()

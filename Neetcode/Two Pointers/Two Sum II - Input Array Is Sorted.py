@@ -36,26 +36,28 @@ The tests are generated such that there is exactly one solution.
 """
 
 from typing import *
- 
+
+
 class Solution:
-    def twoSum(self,nums:List[int],target:int)-> List[int]:
-        i,j=0,len(nums)-1
-        while i<j:
-            nsum = nums[i]+nums[j]
-            if nsum==target:
-                return [i+1,j+1]
-            if nsum<target:
-                i+=1
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        i, j = 0, len(nums) - 1
+        while i < j:
+            nsum = nums[i] + nums[j]
+            if nsum == target:
+                return [i + 1, j + 1]
+            if nsum < target:
+                i += 1
             else:
-                j-=1
+                j -= 1
 
 
 def test_twoSum():
-    nums = [2,3,4]
+    nums = [2, 3, 4]
     target = 6
-    result = Solution().twoSum(nums,target)
+    result = Solution().twoSum(nums, target)
     print(result)
-    assert result == [1,3]
+    assert result == [1, 3]
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     test_twoSum()

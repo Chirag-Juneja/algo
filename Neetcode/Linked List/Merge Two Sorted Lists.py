@@ -30,41 +30,46 @@ Both list1 and list2 are sorted in non-decreasing order
 """
 
 from typing import *
-from LinkedList import * 
+from LinkedList import *
+
 
 class Soluiton:
-    def mergeTwoLists(self,list1:Optional[ListNode],list2:Optional[ListNode])->Optional[ListNode]:
+    def mergeTwoLists(
+        self, list1: Optional[ListNode], list2: Optional[ListNode]
+    ) -> Optional[ListNode]:
         if not list1:
             return list2
         if not list2:
             return list1
-        if list1.val<=list2.val: 
-            head = list1 
+        if list1.val <= list2.val:
+            head = list1
             second = list2
         else:
             head = list2
             second = list1
         merged = head
         while second:
-            if merged.next==None:
-                merged.next= second
+            if merged.next == None:
+                merged.next = second
                 break
             if merged.next.val < second.val:
                 merged = merged.next
             else:
                 next = merged.next
-                merged.next = second 
+                merged.next = second
                 merged = merged.next
-                second=second.next
+                second = second.next
                 merged.next = next
         return head
 
-def test_mergeTwoLists():
-    list1 = to_linkedlist([1,2,4])
-    list2 = to_linkedlist([1,3,4])
-    mergedlist = Soluiton().mergeTwoLists(list1,list2)
-    print(to_list(mergedlist))
-    assert to_list(mergedlist)==[1,1,2,3,4,4]
 
-if __name__ == '__main__':
+def test_mergeTwoLists():
+    list1 = to_linkedlist([1, 2, 4])
+    list2 = to_linkedlist([1, 3, 4])
+    mergedlist = Soluiton().mergeTwoLists(list1, list2)
+    print(to_list(mergedlist))
+    assert to_list(mergedlist) == [1, 1, 2, 3, 4, 4]
+
+
+if __name__ == "__main__":
     test_mergeTwoLists()

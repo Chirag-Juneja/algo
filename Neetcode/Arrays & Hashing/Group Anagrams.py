@@ -27,21 +27,23 @@ strs[i] consists of lowercase English letters.
 """
 
 from typing import *
-from collections import defaultdict 
+from collections import defaultdict
+
+
 class Solution:
-    def groupAnagrams(self,strs:List[str])-> List[List[str]]:
-        hmap=defaultdict(list)
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        hmap = defaultdict(list)
         for s in strs:
-            hmap[''.join(sorted(s))].append(s)
+            hmap["".join(sorted(s))].append(s)
         return list(hmap.values())
 
 
 def test_groupAnagrams():
-    strs= ["eat","tea","tan","ate","nat","bat"]
+    strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
     result = Solution().groupAnagrams(strs)
     print(result)
-    assert result == [['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat']]
+    assert result == [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     test_groupAnagrams()
-        

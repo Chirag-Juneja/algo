@@ -29,14 +29,15 @@ s consists of parentheses only '()[]{}'.
 """
 
 from typing import *
- 
+
+
 class Solution:
-    def isValid(self,s:str)-> bool:
-        mapping = {'(':')','{':'}','[':']'}
+    def isValid(self, s: str) -> bool:
+        mapping = {"(": ")", "{": "}", "[": "]"}
         s = list(s)
-        stack =[]
+        stack = []
         for element in s:
-            if stack and mapping.get(stack[-1])==element:
+            if stack and mapping.get(stack[-1]) == element:
                 stack.pop()
             elif stack and element not in mapping.keys():
                 return False
@@ -47,10 +48,12 @@ class Solution:
             return False
         return True
 
+
 def test_isValid():
     s = "()[]{}"
     result = Solution().isValid(s)
     assert result == True
+
 
 def test_isValid_invalid():
     s = "([)]"
@@ -58,6 +61,6 @@ def test_isValid_invalid():
     assert result == False
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     test_isValid()
     test_isValid_invalid()

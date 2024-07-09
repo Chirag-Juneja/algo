@@ -20,23 +20,28 @@ Constraints:
 1 <= s.length, t.length <= 5 * 104
 s and t consist of lowercase English letters.
 """
+
 from typing import *
-from collections import Counter 
+from collections import Counter
+
+
 class Solution:
-    def isAnagram(self,s:str,t:str)-> bool:
-        return Counter(s)==Counter(t)
+    def isAnagram(self, s: str, t: str) -> bool:
+        return Counter(s) == Counter(t)
+
 
 def test_isAnagram_with_anagram():
-    s,t="anagram","nagaram"
-    result = Solution().isAnagram(s,t)
+    s, t = "anagram", "nagaram"
+    result = Solution().isAnagram(s, t)
     assert result == True
 
+
 def test_isAnagram_with_not_anagram():
-    s,t="rat","car"
-    result = Solution().isAnagram(s,t)
+    s, t = "rat", "car"
+    result = Solution().isAnagram(s, t)
     assert result == False
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     test_isAnagram_with_anagram()
     test_isAnagram_with_not_anagram()
-        

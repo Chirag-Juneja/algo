@@ -23,29 +23,37 @@ Constraints:
 -109 <= nums[i] <= 109
 0 <= k <= 105
 """
-from typing import * 
+
+from typing import *
+
+
 class Solution:
-    def containsNearbyDuplicate(self,nums:List[int],k:int)->bool:
-        if not k: return False
+    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
+        if not k:
+            return False
         hm = {}
         for idx, n in enumerate(nums):
             if n in hm:
-                if idx-hm[n] <=k: return True
-            hm[n]=idx
+                if idx - hm[n] <= k:
+                    return True
+            hm[n] = idx
         return False
-    
+
+
 def test_containsNearbyDuplicate():
-    nums = [1,2,3,1]
+    nums = [1, 2, 3, 1]
     k = 3
-    result = Solution().containsNearbyDuplicate(nums,k)
+    result = Solution().containsNearbyDuplicate(nums, k)
     assert result
 
+
 def test_not_containsNearbyDuplicate():
-    nums = [1,2,3,1,2,3]
+    nums = [1, 2, 3, 1, 2, 3]
     k = 2
-    result = Solution().containsNearbyDuplicate(nums,k)
+    result = Solution().containsNearbyDuplicate(nums, k)
     assert not result
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     test_containsNearbyDuplicate()
     test_not_containsNearbyDuplicate()

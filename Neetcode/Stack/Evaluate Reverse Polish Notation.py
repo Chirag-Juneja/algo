@@ -35,10 +35,13 @@ Explanation: ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
 = 17 + 5
 = 22
 """
-from typing import * 
+
+from typing import *
+
+
 class Solution:
-    def evalRPN(self,tokens:List[str])->int:
-        operators = ["-","+","/","*"]
+    def evalRPN(self, tokens: List[str]) -> int:
+        operators = ["-", "+", "/", "*"]
         stack = []
         for token in tokens:
             if token not in operators:
@@ -46,16 +49,17 @@ class Solution:
             else:
                 b = stack.pop()
                 a = stack.pop()
-                r = int(eval(a+token+b))
+                r = int(eval(a + token + b))
                 stack.append(str(r))
         return eval(stack.pop())
 
 
 def test_evalRPN():
-    tokens = ["4","13","5","/","+"]
+    tokens = ["4", "13", "5", "/", "+"]
     result = Solution().evalRPN(tokens)
     print(result)
     assert result == 6
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     test_evalRPN()

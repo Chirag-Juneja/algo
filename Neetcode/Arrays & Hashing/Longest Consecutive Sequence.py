@@ -24,23 +24,27 @@ Constraints:
 
 from typing import *
 from collections import defaultdict
+
+
 class Solution:
-    def longestConsecutive(self,nums:List[int])-> int:
+    def longestConsecutive(self, nums: List[int]) -> int:
         nset = set(nums)
-        max_len=0
+        max_len = 0
         for n in nums:
-            if n-1 not in nset:
-                length =1
-                while n+length in nset:
-                    nset.remove(n+length)
-                    length+=1
-                max_len=max(max_len,length)
+            if n - 1 not in nset:
+                length = 1
+                while n + length in nset:
+                    nset.remove(n + length)
+                    length += 1
+                max_len = max(max_len, length)
         return max_len
 
+
 def test_longestConsecutive():
-    nums = [0,3,7,2,5,8,4,6,0,1,11]
+    nums = [0, 3, 7, 2, 5, 8, 4, 6, 0, 1, 11]
     result = Solution().longestConsecutive(nums)
     assert result == 9
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     test_longestConsecutive()

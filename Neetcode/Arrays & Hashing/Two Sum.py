@@ -31,24 +31,26 @@ Only one valid answer exists.
 """
 
 from typing import *
- 
+
+
 class Solution:
-    def twoSum(self,nums:List[int],target:int)-> List[int]:
-        hmap={}
-        for idx,n in enumerate(nums):
-            diff = target-n
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hmap = {}
+        for idx, n in enumerate(nums):
+            diff = target - n
             if n in hmap:
-                return [hmap[n],idx]
+                return [hmap[n], idx]
             else:
-                hmap[diff]=idx
+                hmap[diff] = idx
 
 
 def test_twoSum():
-    nums = [3,2,4]
+    nums = [3, 2, 4]
     target = 6
-    result = Solution().twoSum(nums,target)
+    result = Solution().twoSum(nums, target)
     print(result)
-    assert result == [1,2]
+    assert result == [1, 2]
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     test_twoSum()

@@ -17,18 +17,20 @@ class ListNode:
 
 
 class Solution:
-    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+    def addTwoNumbers(
+        self, l1: Optional[ListNode], l2: Optional[ListNode]
+    ) -> Optional[ListNode]:
         start = ListNode()
         carry = 0
         sum = start
         first = 1
-        while(l1.next or l2.next or carry or first or l1.val or l2.val):
+        while l1.next or l2.next or carry or first or l1.val or l2.val:
             first = 0
             sum.next = ListNode()
             sum = sum.next
-            val = l1.val+l2.val+carry
+            val = l1.val + l2.val + carry
             sum.val = val % 10
-            carry = val//10
+            carry = val // 10
             print(val, carry)
             if l1.next:
                 l1 = l1.next

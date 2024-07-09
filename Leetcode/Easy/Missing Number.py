@@ -27,15 +27,20 @@ n == nums.length
 0 <= nums[i] <= n
 All the numbers of nums are unique.
 """
-from typing import * 
+
+from typing import *
+
+
 class Solution:
-    def missingNumber(self,nums:List[int])->int:
-        return sum(range(len(nums)+1))-sum(nums)
+    def missingNumber(self, nums: List[int]) -> int:
+        return sum(range(len(nums) + 1)) - sum(nums)
+
 
 def test_missingNumber():
-    nums = [3,0,1]
+    nums = [3, 0, 1]
     result = Solution().missingNumber(nums)
     assert result == 2
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     test_missingNumber()

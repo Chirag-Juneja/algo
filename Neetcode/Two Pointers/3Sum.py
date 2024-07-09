@@ -32,43 +32,46 @@ Constraints:
 3 <= nums.length <= 3000
 -105 <= nums[i] <= 10
 """
-from typing import * 
+
+from typing import *
+
+
 class Solution:
-    def threeSum(self,nums:List[int])->List[List[int]]:
-        result=[]
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        result = []
         nums.sort()
-        if all(e==0 for e in nums):
-            return [[0,0,0]]
-        for idx in range(0,len(nums)-1):
-            if idx>0 and nums[idx]==nums[idx-1]:
+        if all(e == 0 for e in nums):
+            return [[0, 0, 0]]
+        for idx in range(0, len(nums) - 1):
+            if idx > 0 and nums[idx] == nums[idx - 1]:
                 print(idx)
                 continue
-            left,right = idx+1,len(nums)-1
-            while left<right:
-                sum = nums[left]+nums[right]+nums[idx]
-                if sum==0:
-                    r = [nums[idx],nums[left],nums[right]]
+            left, right = idx + 1, len(nums) - 1
+            while left < right:
+                sum = nums[left] + nums[right] + nums[idx]
+                if sum == 0:
+                    r = [nums[idx], nums[left], nums[right]]
                     result.append(r)
-                    left+=1
-                    while nums[left]==nums[left-1] and left <right:
-                        left+=1
-                elif sum<0:
-                    left+=1
+                    left += 1
+                    while nums[left] == nums[left - 1] and left < right:
+                        left += 1
+                elif sum < 0:
+                    left += 1
                 else:
-                    right-=1
+                    right -= 1
         return result
 
 
-
 def test_threeSum():
-    nums = [-1,0,1,2,-1,-4]
+    nums = [-1, 0, 1, 2, -1, -4]
     result = Solution().threeSum(nums)
     print(result)
-    assert result ==[[-1,-1,2],[-1,0,1]]
-    nums=[0,0,0,0]
+    assert result == [[-1, -1, 2], [-1, 0, 1]]
+    nums = [0, 0, 0, 0]
     result = Solution().threeSum(nums)
     print(result)
-    assert result == [[0,0,0]]
+    assert result == [[0, 0, 0]]
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     test_threeSum()
