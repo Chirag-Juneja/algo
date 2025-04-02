@@ -18,23 +18,25 @@
 # -1000 <= nums[i] <= 1000
 # -107 <= k <= 107
 
-from typing import * 
+from typing import *
+
 
 class Solution:
-    def subarraySum(self, nums: List[int],k:int)->int:
+    def subarraySum(self, nums: List[int], k: int) -> int:
         prev = 0
         d = {0: 1}
         ans = 0
         for num in nums:
             prev += num
-            if prev-k in d:
-                ans += d[prev-k]
+            if prev - k in d:
+                ans += d[prev - k]
             d[prev] = d.get(prev, 0) + 1
         return ans
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     nums = [1, 2, 3]
     k = 3
-    result = Solution().subarraySum(nums,k)
+    result = Solution().subarraySum(nums, k)
     print(result)
     assert result == 2

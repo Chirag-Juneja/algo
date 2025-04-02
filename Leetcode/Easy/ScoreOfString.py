@@ -3,7 +3,7 @@ You are given a string s. The score of a string is defined as the sum of the abs
 
 Return the score of s.
 
- 
+
 
 Example 1:
 
@@ -25,7 +25,7 @@ Explanation:
 
 The ASCII values of the characters in s are: 'z' = 122, 'a' = 97. So, the score of s would be |122 - 97| + |97 - 122| = 25 + 25 = 50.
 
- 
+
 
 Constraints:
 

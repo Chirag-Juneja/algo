@@ -7,7 +7,7 @@ A common string with the least index sum is a common string such that if it appe
 
 Return all the common strings with the least index sum. Return the answer in any order.
 
- 
+
 
 Example 1:
 
@@ -28,7 +28,7 @@ Explanation: There are three common strings:
 "sad" with index sum = (1 + 0) = 1.
 "good" with index sum = (2 + 2) = 4.
 The strings with the least index sum are "sad" and "happy".
- 
+
 
 Constraints:
 

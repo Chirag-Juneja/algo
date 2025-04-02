@@ -12,7 +12,7 @@ Write a solution to modify the salary column by multiplying each salary by 2.
 
 The result format is in the following example.
 
- 
+
 
 Example 1:
 
