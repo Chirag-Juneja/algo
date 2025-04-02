@@ -37,4 +37,4 @@ if __name__ == '__main__':
     k = 3
     result = Solution().subarraySum(nums,k)
     print(result)
-    assert result = 2
+    assert result == 2
