@@ -3,7 +3,7 @@ A phrase is a palindrome if, after converting all uppercase letters into lowerca
 
 Given a string s, return true if it is a palindrome, or false otherwise.
 
- 
+
 
 Example 1:
 

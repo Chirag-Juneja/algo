@@ -3,7 +3,7 @@ Given an unsorted array of integers nums, return the length of the longest conse
 
 You must write an algorithm that runs in O(n) time.
 
- 
+
 
 Example 1:
 
@@ -14,7 +14,7 @@ Example 2:
 
 Input: nums = [0,3,7,2,5,8,4,6,0,1]
 Output: 9
- 
+
 
 Constraints:
 

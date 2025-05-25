@@ -5,7 +5,7 @@ You may assume that each input would have exactly one solution, and you may not 
 
 You can return the answer in any order.
 
- 
+
 
 Example 1:
 
@@ -20,7 +20,7 @@ Example 3:
 
 Input: nums = [3,3], target = 6
 Output: [0,1]
- 
+
 
 Constraints:
 

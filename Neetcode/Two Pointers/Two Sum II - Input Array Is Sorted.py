@@ -7,7 +7,7 @@ The tests are generated such that there is exactly one solution. You may not use
 
 Your solution must use only constant extra space.
 
- 
+
 
 Example 1:
 
@@ -24,7 +24,7 @@ Example 3:
 Input: numbers = [-1,0], target = -1
 Output: [1,2]
 Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We return [1, 2].
- 
+
 
 Constraints:
 

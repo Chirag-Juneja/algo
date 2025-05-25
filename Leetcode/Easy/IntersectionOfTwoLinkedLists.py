@@ -53,7 +53,8 @@
 # 0 <= skipB <= n
 # intersectVal is 0 if listA and listB do not intersect.
 # intersectVal == listA[skipA] == listB[skipB] if listA and listB intersect.
-from typing import *  
+from typing import *
+
 
 class ListNode:
     def __init__(self, x):

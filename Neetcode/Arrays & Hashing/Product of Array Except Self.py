@@ -5,7 +5,7 @@ The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit int
 
 You must write an algorithm that runs in O(n) time and without using the division operation.
 
- 
+
 
 Example 1:
 
@@ -15,7 +15,7 @@ Example 2:
 
 Input: nums = [-1,1,0,-3,3]
 Output: [0,0,9,0,0]
- 
+
 
 Constraints:
 

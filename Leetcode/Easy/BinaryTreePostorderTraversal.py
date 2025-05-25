@@ -10,4 +10,4 @@ class Solution:
             return []
         left = self.postorderTraversal(root.left)
         right = self.postorderTraversal(root.right)
-        return  left + right + [root.val]
+        return left + right + [root.val]
